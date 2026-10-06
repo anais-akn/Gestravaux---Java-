@@ -31,5 +31,5 @@ Pour accéder à l'interface de gestion et tester les fonctionnalités, utilisez
 ### ⚙️ Paramètres de connexion
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/app_db
-spring.datasource.username=votre_utilisateur
-spring.datasource.password=votre_mot_de_passe
+spring.datasource.username=root
+spring.datasource.password=root
