@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.immosync.immosyncapp.controller.HelloController">
+    <children>
+        <AnchorPane fx:id="paneConnexion" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #DDE1E7;" visible="false">
+            <children>
+                <Pane layoutX="74.0" layoutY="66.0" prefHeight="396.0" prefWidth="572.0" style="-fx-background-color: #F4F4F4; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                    <children>
+                        <Label layoutX="32.0" layoutY="32.0" text="IMMO" textFill="#2C3E50">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="92.0" layoutY="32.0" text="SYNC" textFill="#FF9F1C">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="175.0" layoutY="90.0" text="Connexion" textFill="#888888">
+                            <font>
+                                <Font name="System Bold" size="36.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="emailField" layoutX="165.0" layoutY="157.0" prefHeight="30.0" prefWidth="200.0" promptText="E-mail" style="-fx-background-radius: 15; -fx-border-color: #888888; -fx-border-radius: 15; -fx-background-color: white;" />
+                        <PasswordField fx:id="mdpField" layoutX="165.0" layoutY="215.0" prefHeight="30.0" prefWidth="200.0" promptText="Mot de passe" style="-fx-background-radius: 15; -fx-border-color: #888888; -fx-border-radius: 15; -fx-background-color: white;" />
+                        <Button layoutX="185.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#clicConnection" prefHeight="35.0" prefWidth="160.0" style="-fx-background-color: #9AA7E0; -fx-background-radius: 10; -fx-cursor: hand;" text="Se connecter" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="180.0" fitWidth="220.0" layoutX="345.0" layoutY="167.0">
+                            <image>
+                                <Image url="@../../../images/page.connexion/deco1.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="200.0" fitWidth="168.0" layoutX="-3.0" layoutY="65.0">
+                            <image>
+                                <Image url="@../../../images/page.connexion/deco2.png" />
+                            </image>
+                        </ImageView>
+                  <Label fx:id="lblId" layoutX="171.0" layoutY="190.0" text="Entrez un identifiant" textFill="RED" />
+                  <Label fx:id="lblMdp" layoutX="171.0" layoutY="248.0" text="Entrez un mot de passe" textFill="RED" />
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="paneAcceuil" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #DDE1E7;">
+            <children>
+                <Label layoutX="201.0" layoutY="110.0" text="Bienvenue sur votre compte" textFill="#888888">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="158.0" layoutY="160.0" text="Veuillez sélectionner ce que vous voulez manager :" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <HBox alignment="CENTER" layoutX="116.0" layoutY="255.0" prefHeight="150.0" prefWidth="500.0" spacing="80.0">
+                    <children>
+                  <VBox onMouseClicked="#goToDashboard" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="123.0" fitWidth="120.0">
+                           <image>
+                              <Image url="@../../../images/page_accueil/unnamed-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="  dashboard" textFill="#333333">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                        <VBox alignment="CENTER" onMouseClicked="#goToBiens" prefHeight="150.0" prefWidth="120.0" style="-fx-cursor: hand;">
+                            <children>
+                                <ImageView fitHeight="123.0" fitWidth="120.0">
+                                    <image>
+                                        <Image url="@../../../images/page_accueil/maison.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="biens" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" onMouseClicked="#goToChantier" prefHeight="150.0" prefWidth="120.0" style="-fx-cursor: hand;">
+                            <children>
+                                <ImageView fitHeight="123.0" fitWidth="120.0">
+                                    <image>
+                                        <Image url="@../../../images/page_accueil/immeuble.png" />
+                                    </image>
+                                </ImageView>
+                                <Label text="chantier" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <Label layoutX="106.0" layoutY="50.0" text="SYNC" textFill="#FF9F1C">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="46.0" layoutY="50.0" text="IMMO" textFill="#2C3E50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="527.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#clicDeconnexion" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Déconnexion" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="paneListBien" prefHeight="400.0" prefWidth="706.0" style="-fx-background-color: #DDE1E7;" visible="false">
+            <children>
+                <Label layoutX="51.0" layoutY="35.0" text="IMMO" textFill="#2C3E50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="122.0" layoutY="35.0" text="SYNC" textFill="#FF9F1C">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="565.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#retourAccueil" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Label layoutX="266.0" layoutY="98.0" text="liste des biens" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="32.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="bienTable" layoutX="37.0" layoutY="210.0" prefHeight="250.0" prefWidth="500.0" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+                    <columns>
+                        <TableColumn fx:id="colId" prefWidth="100.0" text="ID" />
+                        <TableColumn fx:id="colCp" prefWidth="200.0" text="CODE POSTAL" />
+                        <TableColumn fx:id="colAdresse" prefWidth="198.0" text="ADRESSE" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <VBox layoutX="552.0" layoutY="247.0" spacing="20.0">
+                    <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#ouvrirCreationBien" prefHeight="40.0" prefWidth="177.0" style="-fx-background-color: #2D549E; -fx-background-radius: 20; -fx-cursor: hand;" text="Créer un nouveau bien" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#modifierBien" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #436FB0; -fx-background-radius: 20; -fx-cursor: hand;" text="Modifier" textAlignment="CENTER" textFill="WHITE" translateX="40.0">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="paneCreaBien" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #DDE1E7;" visible="false">
+            <children>
+                <Label layoutX="49.0" layoutY="28.0" text="IMMO" textFill="#2C3E50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="109.0" layoutY="28.0" text="SYNC" textFill="#FF9F1C">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="539.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#retourAccueil" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Label layoutX="271.0" layoutY="85.0" text="Créer un bien" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <VBox layoutX="250.0" layoutY="125.0" prefWidth="220.0" spacing="15.0">
+                    <children>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Adresse" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="adresseField" prefHeight="30.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Ville" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="villeField" prefHeight="30.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Propriétaire" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="proprietaireCombo" prefHeight="30.0" prefWidth="220.0" promptText="Choisir un propriétaire" style="-fx-background-color: white; -fx-background-radius: 5;" />
+                            </children>
+                        </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" spacing="5.0">
+                     <children>
+                        <Label text="Surface" textFill="#333333">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSurface" prefHeight="30.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="222.0" spacing="5.0">
+                     <children>
+                        <Label text="Code Postal" textFill="#333333">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCp" prefHeight="30.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
+                     </children>
+                  </VBox>
+                    </children>
+                </VBox>
+                <Button layoutX="300.0" layoutY="483.0" mnemonicParsing="false" onMouseClicked="#handleEnregistrer" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #3B5FA0; -fx-background-radius: 15; -fx-cursor: hand;" text="Enregistrer" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="paneCreaChantier" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #DDE1E7;" visible="false">
+            <children>
+                <Label layoutX="42.0" layoutY="25.0" text="IMMO" textFill="#2C3E50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="102.0" layoutY="25.0" text="SYNC" textFill="#FF9F1C">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="548.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#retourAccueil" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Label layoutX="273.0" layoutY="114.0" text="Créer un chantier" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <VBox layoutX="251.0" layoutY="169.0" prefWidth="270.0" spacing="25.0">
+                    <children>
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label text="bien" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="bienCombo" prefHeight="35.0" prefWidth="270.0" promptText="Sélectionner un bien..." style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label text="Inspecteur" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                                <ComboBox fx:id="inspecteurCombo" prefHeight="35.0" prefWidth="270.0" promptText="Sélectionner un inspecteur..." style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: #cccccc; -fx-border-radius: 5;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <Button layoutX="301.0" layoutY="362.0" mnemonicParsing="false" onMouseClicked="#handleCreerDevis" prefHeight="40.0" prefWidth="170.0" style="-fx-background-color: #3B5FA0; -fx-background-radius: 20; -fx-cursor: hand;" text="Créer devis type" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="paneCreaDevisType" prefHeight="456.0" prefWidth="649.0" style="-fx-background-color: #DDE1E7;">
+            <children>
+                <Label layoutX="42.0" layoutY="43.0" text="IMMO" textFill="#2C3E50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="102.0" layoutY="43.0" text="SYNC" textFill="#FF9F1C">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Button layoutX="562.0" layoutY="41.0" onMouseClicked="#retourAccueil" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Accueil" textFill="WHITE" />
+                <Label layoutX="250.0" layoutY="70.0" text="Créer un devis type" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+                <VBox spacing="10" />
+                <GridPane hgap="15.0" layoutX="140.0" layoutY="130.0" vgap="20.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="250.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <Label text="Catégorie prestation :" textFill="#333333">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="categorieCombo" prefWidth="250.0" promptText="Sélectionner..." style="-fx-background-color: white;" GridPane.columnIndex="1" />
+                        <Label text="Prestataire :" textFill="#333333" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="prestataireCombo" prefWidth="250.0" promptText="Choisir prestataire..." style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Quantité :" textFill="#333333" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Spinner fx:id="quantitySpinner" prefWidth="80.0" style="-fx-background-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+                <TableView fx:id="prestationTable" layoutX="38.0" layoutY="275.0" onMouseClicked="#clickTablePrestation" prefHeight="180.0" prefWidth="619.0" style="-fx-background-color: transparent;">
+                    <columns>
+                        <TableColumn fx:id="colPrestation" prefWidth="180.0" text="Prestation" />
+                        <TableColumn fx:id="colQuantite" prefWidth="80.0" text="quantité" />
+                        <TableColumn fx:id="colPrixUnitaire" prefWidth="100.0" text="prix unité" />
+                        <TableColumn fx:id="colTotal" prefWidth="100.0" text="total" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+                <HBox alignment="CENTER_RIGHT" layoutX="558.0" layoutY="477.0" spacing="10.0">
+                    <children>
+                        <Label text="total :" textFill="#333333">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="labelTotalFinal" text="0.00 €" textFill="#3B5FA0">
+                            <font>
+                                <Font name="System Bold" size="22.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <Button layoutX="419.0" layoutY="475.0" onMouseClicked="#validerDevis" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #3B5FA0; -fx-background-radius: 15;" text="Valider" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+            <Button layoutX="404.0" layoutY="234.0" onMouseClicked="#validerSelection" prefHeight="29.0" prefWidth="150.0" style="-fx-background-color: #3B5FA0; -fx-background-radius: 15;" text="valider la selection" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblSuppr" layoutX="197.0" layoutY="483.0" text="choisissez une ligne a supprimer" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="68.0" layoutY="475.0" onMouseClicked="#supprDevis" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #870C0C; -fx-background-radius: 15;" text="Supprimer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="paneModifierBien" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #DDE1E7;" visible="false">
+            <children>
+                <Label layoutX="49.0" layoutY="28.0" text="IMMO" textFill="#2C3E50">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="109.0" layoutY="28.0" text="SYNC" textFill="#FF9F1C">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+
+                <Button layoutX="539.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#retourAccueil" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Accueil" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+
+                <Label layoutX="255.0" layoutY="105.0" text="Modifier le bien" textFill="#333333">
+                    <font>
+                        <Font name="System Bold" size="28.0" />
+                    </font>
+                </Label>
+
+                <VBox layoutX="250.0" layoutY="162.0" prefHeight="338.0" prefWidth="220.0" spacing="15.0">
+                    <children>
+                  <VBox spacing="5.0">
+                     <children>
+                        <Label text="Choisir un bien a modifier" textFill="#333333">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cboBienAModif" prefHeight="30.0" prefWidth="220.0" promptText="Choisir..." style="-fx-background-color: white; -fx-background-radius: 5;" />
+                     </children>
+                  </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Nouvelle Adresse" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtAdresse" prefHeight="30.0" style="-fx-background-color: white; -fx-background-radius: 5;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Surface" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtVSurface" prefHeight="30.0" style="-fx-background-radius: 5; -fx-background-color: white;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label fx:id="tctVille" text="Nouvelle Ville" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtVille" prefHeight="30.0" style="-fx-background-radius: 5; -fx-background-color: white;" />
+                            </children>
+                        </VBox>
+                        <VBox spacing="5.0">
+                            <children>
+                                <Label text="Code_Postal" textFill="#333333">
+                                    <font>
+                                        <Font name="System Bold" size="14.0" />
+                                    </font>
+                                </Label>
+                                <TextField fx:id="txtCodePostal" prefHeight="30.0" style="-fx-background-radius: 5; -fx-background-color: white;" />
+                                <VBox spacing="5.0">
+                                    <children>
+                                        <Label text="Changer Propriétaire" textFill="#333333">
+                                            <font>
+                                                <Font name="System Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox fx:id="modifProprietaireCombo" prefHeight="30.0" prefWidth="220.0" promptText="Choisir..." style="-fx-background-color: white; -fx-background-radius: 5;" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <HBox layoutX="489.0" layoutY="295.0" spacing="20.0">
+                    <children>
+                        <Button mnemonicParsing="false" onMouseClicked="#ListeBiens" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #888888; -fx-background-radius: 15; -fx-cursor: hand;" text="Annuler" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onMouseClicked="#EnregistrerModif" prefHeight="35.0" prefWidth="110.0" style="-fx-background-color: #436FB0; -fx-background-radius: 15; -fx-cursor: hand;" text="Modifier" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="13.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+      <AnchorPane fx:id="paneDashboard" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #DDE1E7;" visible="false">
+         <children>
+            <Label layoutX="201.0" layoutY="47.0" text="bienvenue sur le dashboard" textFill="#888888">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="106.0" layoutY="50.0" text="SYNC" textFill="#FF9F1C">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="50.0" text="IMMO" textFill="#2C3E50">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <BarChart fx:id="bcChantierVille" layoutX="14.0" layoutY="305.0" prefHeight="226.0" prefWidth="330.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
+            <Button layoutX="532.0" layoutY="48.0" onMouseClicked="#retourAccueil" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #888888; -fx-background-radius: 20; -fx-cursor: hand;" text="Accueil" textFill="WHITE" />
+            <LineChart fx:id="lcChantierMois" layoutX="367.0" layoutY="305.0" prefHeight="226.0" prefWidth="339.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+            <PieChart fx:id="pcRevenusPresta" layoutX="379.0" layoutY="83.0" prefHeight="278.0" prefWidth="339.0" />
+            <Label layoutX="62.0" layoutY="112.0" text="nombre d'utilisateurs :" />
+            <Label layoutX="62.0" layoutY="155.0" text="pourcentage propriétaires :" />
+            <Label layoutX="62.0" layoutY="204.0" text="pourcentage entrepreneurs :" />
+            <Label layoutX="62.0" layoutY="255.0" text="pourcentage inspecteurs :" />
+            <Label fx:id="lblNbUtil" layoutX="215.0" layoutY="112.0" text="lblNbUtil" textFill="#860a0a">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblEntr" layoutX="215.0" layoutY="204.0" text="Label" textFill="#860a0a">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblProprio" layoutX="215.0" layoutY="155.0" text="Label" textFill="#860a0a">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblInspec" layoutX="215.0" layoutY="255.0" text="Label" textFill="#860a0a">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneEntrepreneur" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="643.0" style="-fx-background-color: #DDE1E7;">
+         <children>
+                   <ListView fx:id="lvEntrepreneurs" layoutX="132.0" layoutY="113.0" prefHeight="299.0" prefWidth="455.0" />
+                   <Label layoutX="261.0" layoutY="65.0" style="-fx-font-weight: bold;" text="Sélectionnez les entrepreneurs :" />
+            <Button layoutX="291.0" layoutY="437.0" onMouseClicked="#envoyerDevis" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #870C0C; -fx-background-radius: 15;" text="envoyer" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+
+    </children>
+</StackPane>
