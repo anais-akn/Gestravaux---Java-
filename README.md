@@ -18,8 +18,8 @@
 ## 🔐 Accès Administration
 Pour accéder à l'interface de gestion et tester les fonctionnalités, utilisez les identifiants par défaut :
 
-* **📧 Adresse Email :** `admin@app.com`
-* **🔑 Mot de passe :** `$2y$13$xyz`
+* **📧 Adresse Email :** `admin@immosync.fr`
+* **🔑 Mot de passe :** `$2y$13$3Zmi1s9QjwF4Oi22aSHXkOScN5lBHZdnBq0RpZQdgsdjqWNKGE0UO`
 
 ---
 
